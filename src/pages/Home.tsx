@@ -14,8 +14,7 @@ type ChangeEvent = ChangeEventHandler<HTMLInputElement>;
 
 const Home = () => {
   const { playing, setPlaying } = useAudio(audioFile);
-  const { count } = useCounter();
-  const warTime = count.hours === 23 && count.minutes === 59;
+  const { count, warTime } = useCounter();
 
   const handleSound: ChangeEvent = (event) => {
     const checked = event.target.checked;

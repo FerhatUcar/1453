@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { GlobalStyle, StyledBox, StyledContent } from "../style/app.style";
 import { GUTTER } from "../constants";
 import data from "../data.json";
+import { useNavigate } from "react-router-dom";
+import { useCounter } from "../hooks/useCounter";
+import Hat from "../assets/img/hat.png";
 
 const { sultans } = data;
 
@@ -13,7 +16,7 @@ const StyledSultansPage = styled.div`
   h1 {
     font-size: 62px;
     text-align: center;
-    margin-bottom: 0;
+    margin: 0;
   }
 `;
 
@@ -34,6 +37,12 @@ const StyledTimeLine = styled.div`
   border-left: 5px dotted white;
 `;
 
+const StyledHat = styled.img`
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+`;
+
 export type ActiveType = {
   active: number | null;
 };
@@ -46,9 +55,17 @@ type DataType = {
 };
 
 const Sultans = () => {
+  let navigate = useNavigate();
+  const { warTime } = useCounter();
   const [activeId, setActiveId] = useState<ActiveType>({
     active: null,
   });
+
+  useEffect(() => {
+    if (warTime) {
+      return navigate("/");
+    }
+  }, [warTime, navigate]);
 
   // toggle current information box
   const isCurrentId = (id: number) => activeId.active === id;
@@ -82,6 +99,8 @@ const Sultans = () => {
     <>
       <GlobalStyle backgroundImage={false} />
       <StyledSultansPage>
+        <StyledHat src={Hat} alt="Hat" />
+
         <h1>The Sultans</h1>
 
         <StyledDate>1444</StyledDate>

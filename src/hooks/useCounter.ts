@@ -45,6 +45,8 @@ export const useCounter = () => {
   // set count with hours, minutes and seconds
   const [count, setCount] = useState<CounterType>(getTime(timeLeft));
 
+  const warTime = count.hours === 23 && count.minutes === 59;
+
   const handleSetCount = useCallback(() => {
     setCount({ ...getTime(timeLeft) });
   }, [timeLeft]);
@@ -67,5 +69,5 @@ export const useCounter = () => {
     }
   }, [timeLeft, currentTime, handleSetCount]);
 
-  return { count, currentTime, currentFormattedTime };
+  return { count, currentTime, currentFormattedTime, warTime };
 };

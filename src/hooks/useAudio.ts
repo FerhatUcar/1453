@@ -1,8 +1,10 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useAudio = (url: string) => {
   const audio = useMemo(() => new Audio(url), [url]);
   const [playing, setPlaying] = useState(false);
+
+  const stopAudio = useCallback(() => (audio.currentTime = 0), [audio]);
 
   useEffect(() => {
     playing ? audio.play() : audio.pause();
@@ -15,5 +17,5 @@ export const useAudio = (url: string) => {
     };
   }, [audio]);
 
-  return { playing, setPlaying };
+  return { playing, setPlaying, stopAudio, audio };
 };

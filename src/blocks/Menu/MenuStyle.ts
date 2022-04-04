@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { GUTTER } from "../../constants";
+import {BLUE, GUTTER} from "../../constants";
 
 const contentAnimation = keyframes`
  0% { 
@@ -44,7 +44,7 @@ const StyledInnerMenu = styled.ul`
     text-decoration: none;
 
     &:hover {
-      color: #00a2ff;
+      color: ${BLUE};
     }
 
     &:nth-of-type(2) {
