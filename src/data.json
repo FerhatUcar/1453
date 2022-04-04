@@ -1,0 +1,28 @@
+{
+  "sultans": [
+    {
+      "id": 0,
+      "title": "Fatih Sultan Mehmet II",
+      "img": "img/FSM.png",
+      "content": "Mehmed II was an Ottoman sultan who ruled from August 1444 to September 1446, and then later from February 1451 to May 1481. In Mehmed II's first reign, he defeated the crusade led by John Hunyadi after the Hungarian incursions into his country broke the conditions of the truce Peace of Szeged. When Mehmed II ascended the throne again in 1451 he strengthened the Ottoman navy and made preparations to attack Constantinople. At the age of 21, he conquered Constantinople (modern-day Istanbul) and brought an end to the Byzantine Empire."
+    },
+    {
+      "id": 1,
+      "title": "Sultan Bayezid II",
+      "img": "img/bayezid.png",
+      "content": "Bayezid II was the eldest son and successor of Mehmed II, ruling as Sultan of the Ottoman Empire from 1481 to 1512. During his reign, Bayezid II consolidated the Ottoman Empire and thwarted a Safavid rebellion soon before abdicating his throne to his son, Selim I. He evacuated Sephardi Jews from Spain after the proclamation of the Alhambra Decree, and resettled them throughout Ottoman lands, especially in Salonica."
+    },
+    {
+      "id": 2,
+      "title": "Yavuz Sultan Selim I",
+      "img": "img/selim.png",
+      "content": "Yavuz Sultan Selim, was the Sultan of the Ottoman Empire from 1512 to 1520. Despite lasting only eight years, his reign is notable for the enormous expansion of the Empire, particularly his conquest between 1516 and 1517 of the entire Mamluk Sultanate of Egypt, which included all of the Levant, Hejaz, Tihamah, and Egypt itself. On the eve of his death in 1520, the Ottoman Empire spanned about 3,400,000 km2 (1,300,000 sq mi), having grown by seventy percent during Selim's reign."
+    },
+    {
+      "id": 3,
+      "title": "Kanuni Sultan Suleyman I",
+      "img": "img/suleyman.png",
+      "content": "Suleiman I, 6 November 1494 – 6 September 1566), commonly known as Suleiman the Magnificent in the West and Suleiman the Lawgiver in his realm, was the tenth and longest-reigning Sultan of the Ottoman Empire from 1520 until his death in 1566. Under his administration, the Ottoman caliphate ruled over at least 25 million people."
+    }
+  ]
+}
