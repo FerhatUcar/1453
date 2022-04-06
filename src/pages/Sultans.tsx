@@ -1,47 +1,17 @@
 import React, { useEffect, useState } from "react";
-import styled from "styled-components";
 import { GlobalStyle, StyledBox, StyledContent } from "../style/app.style";
-import { GUTTER } from "../constants";
 import data from "../data.json";
 import { useNavigate } from "react-router-dom";
-import { useCounter } from "../hooks/useCounter";
-import Hat from "../assets/img/hat.png";
+import { useCounter } from "../hooks";
+import { Hat } from "../assets";
+import {
+  StyledSultansPage,
+  StyledHat,
+  StyledDate,
+  StyledTimeLine,
+} from "./styled/Sultans.style";
 
 const { sultans } = data;
-
-const StyledSultansPage = styled.div`
-  color: white;
-  padding: ${GUTTER.medium};
-
-  h1 {
-    font-size: 62px;
-    text-align: center;
-    margin: 0;
-  }
-`;
-
-const StyledDate = styled.span`
-  display: block;
-  font-size: 48px;
-  text-align: center;
-`;
-
-const StyledTimeLine = styled.div`
-  position: relative;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  height: 30px;
-  content: "";
-  z-index: -1;
-  border-left: 5px dotted white;
-`;
-
-const StyledHat = styled.img`
-  height: 100px;
-  display: block;
-  margin: 0 auto;
-`;
 
 export type ActiveType = {
   active: number | null;
@@ -101,11 +71,12 @@ const Sultans = () => {
       <StyledSultansPage>
         <StyledHat src={Hat} alt="Hat" />
 
-        <h1>The Sultans</h1>
+        <h1>The greatest sultans</h1>
 
         <StyledDate>1444</StyledDate>
         <StyledTimeLine />
         {accordions}
+        <StyledDate>1566</StyledDate>
       </StyledSultansPage>
     </>
   );

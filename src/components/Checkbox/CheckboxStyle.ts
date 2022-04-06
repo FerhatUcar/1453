@@ -41,8 +41,8 @@ export const StyledBoxCheck = styled.div`
           background: #fff;
           position: absolute;
           transform: rotate(45deg);
-          top: 13px;
-          left: 9px;
+          top: 11px;
+          left: 7px;
           transition: width 50ms ease 50ms;
           transform-origin: 0 0;
         }
@@ -55,8 +55,8 @@ export const StyledBoxCheck = styled.div`
           background: #fff;
           position: absolute;
           transform: rotate(305deg);
-          top: 16px;
-          left: 10px;
+          top: 14px;
+          left: 8px;
           transition: width 50ms ease;
           transform-origin: 0 0;
         }

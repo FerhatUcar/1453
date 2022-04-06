@@ -1,5 +1,5 @@
-import React, {FC, useCallback, useEffect, useState} from "react";
-import { useCounter } from "../../hooks/useCounter";
+import React, { FC, useCallback, useEffect, useState } from "react";
+import { useAudio, useCounter } from "../../hooks";
 import {
   StyledHeader,
   StyledInnerBox,
@@ -8,12 +8,13 @@ import {
   StyledHeaderText,
   StyledPlayer,
 } from "./HeaderStyle";
-import MenuIcon from "../../assets/img/menu.svg";
-import PlayIcon from "../../assets/img/play.svg";
-import PauseIcon from "../../assets/img/pause.svg";
-import StopIcon from "../../assets/img/stop.svg";
-import { useAudio } from "../../hooks/useAudio";
-const audioFile = require("../../assets/audio/Buna-Er-Meydani-Derler.mp3");
+import {
+  audioFile,
+  PauseIcon,
+  PlayIcon,
+  StopIcon,
+  MenuIcon,
+} from "../../assets";
 
 type HeaderProps = {
   openMenu: () => void;
@@ -26,15 +27,15 @@ const Header: FC<HeaderProps> = ({ openMenu }) => {
   const [icon, setIcon] = useState(PlayIcon);
 
   useEffect(() => {
-    setIcon(playing ? PauseIcon : PlayIcon)
-  }, [setIcon, playing])
+    setIcon(playing ? PauseIcon : PlayIcon);
+  }, [setIcon, playing]);
 
   useEffect(() => {
     if (warTime) {
       setPlaying(false);
-      setIcon(PlayIcon)
+      setIcon(PlayIcon);
     }
-  }, [setIcon, setPlaying, warTime])
+  }, [setIcon, setPlaying, warTime]);
 
   const handleAudioPlay = useCallback(
     (event) => {
@@ -62,12 +63,14 @@ const Header: FC<HeaderProps> = ({ openMenu }) => {
         <StyledHeaderRightContent>
           <StyledPlayer>
             {!warTime && (
-               <>
-                 <img src={icon} alt="play" onClick={handleAudioPlay} />
-                 <img src={StopIcon} alt="stop" onClick={handleAudioStop} />
-               </>
+              <>
+                <img src={icon} alt="play" onClick={handleAudioPlay} />
+                <img src={StopIcon} alt="stop" onClick={handleAudioStop} />
+              </>
             )}
-            <StyledHeaderText>{!warTime ? "Ottoman Music" : "Wartime!"}</StyledHeaderText>
+            <StyledHeaderText>
+              {!warTime ? "Ottoman Music" : "Wartime!"}
+            </StyledHeaderText>
           </StyledPlayer>
           <div>{currentFormattedTime}</div>
         </StyledHeaderRightContent>

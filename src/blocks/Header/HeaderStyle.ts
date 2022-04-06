@@ -1,11 +1,12 @@
 import styled from "styled-components";
-import { BLUE_DARK, GUTTER } from "../../constants";
+import { GUTTER, SANGRIA, SHADOW} from "../../constants";
 
 const StyledHeader = styled.div`
   color: white;
   background: black;
   font-size: 22px;
   font-weight: bolder;
+  box-shadow: ${SHADOW};
 `;
 
 const StyledInnerBox = styled.div`
@@ -31,6 +32,7 @@ const StyledHamburger = styled.button`
 const StyledHeaderRightContent = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-right: 5px;
 
   img {
     cursor: pointer;
@@ -53,7 +55,7 @@ const StyledPlayer = styled.div`
   margin-right: ${GUTTER.small};
   margin-top: -7px;
   margin-bottom: -7px;
-  background: ${BLUE_DARK};
+  background: ${SANGRIA};
   padding: 0 ${GUTTER.small};
 `;
 
