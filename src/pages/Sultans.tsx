@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { GlobalStyle, StyledBox, StyledContent } from "../style/app.style";
+import { StyledBox, StyledContent } from "../style/app.style";
 import data from "../data.json";
 import { useNavigate } from "react-router-dom";
 import { useCounter } from "../hooks";
@@ -46,7 +46,7 @@ const Sultans = () => {
     }));
 
   const accordions = sultans.map(
-    ({ title, img, content, id }: DataType, index: number) => (
+    ({ title, img, content, id }: DataType, index) => (
       <div key={index}>
         <StyledBox
           key={id}
@@ -67,7 +67,6 @@ const Sultans = () => {
 
   return (
     <>
-      <GlobalStyle backgroundImage={false} />
       <StyledSultansPage>
         <StyledHat src={Hat} alt="Hat" />
 

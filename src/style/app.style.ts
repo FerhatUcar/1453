@@ -1,33 +1,29 @@
 import styled, { createGlobalStyle, css, keyframes } from "styled-components";
-import fetih from "../assets/img/fetih.jpg";
-import fetihDark from "../assets/img/fetih-dark.png";
-import istanbul from "../assets/img/istanbul.jpg";
-import empire from "../assets/img/empire.jpg";
 import { GUTTER } from "../constants";
 import { size } from "../utils/device";
 import { ActiveType } from "../pages/Sultans";
+import { empire, fetihDark, fetih } from "../assets";
 
 const contentAnimation = keyframes`
  0% { opacity: 0 }
  100% { opacity: 1}
 `;
 
-const backgroundStyle = (position: string, size: string) => css`
+export const backgroundPositionSize = (position: string, size: string) => css`
   background-position: ${position};
   background-repeat: no-repeat;
   background-size: ${size};
+  -webkit-background-size: ${size};
+  -moz-background-size: ${size};
+  -o-background-size: ${size};
 `;
 
 const GlobalStyle = createGlobalStyle<{
-  is1453?: boolean;
-  backgroundImage: boolean;
+  is1453: boolean;
 }>`
   body {
-    ${backgroundStyle("50% 50%", "cover")};
-    background-image: ${({ is1453, backgroundImage }) =>
-      backgroundImage ? `url(${is1453 ? fetih : istanbul})` : `url(${empire})`};
-    transition: background-image 1s ease-in-out;
-    height: 100%;
+    ${backgroundPositionSize("50% 50%", "cover")};
+    background-image: ${({ is1453 }) => `url('${is1453 ? fetih : empire}')`};
   }
 `;
 
@@ -47,9 +43,9 @@ export const GenericStyleBox = css`
 `;
 
 const StyledCounterBox = styled.div`
-  display: block;
-  ${backgroundStyle("bottom", "100%")};
+  ${backgroundPositionSize("bottom", "cover")};
   background-image: url(${fetihDark});
+  display: block;
   padding: ${GUTTER.medium};
   margin-top: ${GUTTER.medium};
   position: relative;

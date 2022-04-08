@@ -1,10 +1,15 @@
 import styled from "styled-components";
 import { GUTTER } from "../../constants";
 import { size } from "../../utils/device";
+import { empire } from "../../assets";
+import { backgroundPositionSize } from "../../style/app.style";
 
 const StyledSultansPage = styled.div`
   color: white;
   padding: ${GUTTER.medium};
+  background-image: url(${empire});
+  height: 100vh;
+  ${backgroundPositionSize("50% 50%", "cover")};
 
   h1 {
     text-align: center;
@@ -29,7 +34,7 @@ const StyledTimeLine = styled.div`
   left: 50%;
   height: 30px;
   content: "";
-  z-index: -1;
+  z-index: 1;
   border-left: 5px dotted white;
 `;
 
