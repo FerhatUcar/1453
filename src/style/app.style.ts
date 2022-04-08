@@ -2,7 +2,7 @@ import styled, { createGlobalStyle, css, keyframes } from "styled-components";
 import fetih from "../assets/img/fetih.jpeg";
 import fetihDark from "../assets/img/fetih-dark.png";
 import istanbul from "../assets/img/istanbul.jpeg";
-import empire from "../assets/img/empire.png";
+import empire from "../assets/img/empire.jpg";
 import { GUTTER } from "../constants";
 import { size } from "../utils/device";
 import { ActiveType } from "../pages/Sultans";
