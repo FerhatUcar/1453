@@ -1,7 +1,7 @@
 import styled, { createGlobalStyle, css, keyframes } from "styled-components";
-import fetih from "../assets/img/fetih.jpeg";
+import fetih from "../assets/img/fetih.jpg";
 import fetihDark from "../assets/img/fetih-dark.png";
-import istanbul from "../assets/img/istanbul.jpeg";
+import istanbul from "../assets/img/istanbul.jpg";
 import empire from "../assets/img/empire.jpg";
 import { GUTTER } from "../constants";
 import { size } from "../utils/device";
