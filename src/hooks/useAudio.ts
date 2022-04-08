@@ -17,5 +17,31 @@ export const useAudio = (url: string) => {
     };
   }, [audio]);
 
-  return { playing, setPlaying, stopAudio, audio };
+  return { playing, setPlaying, stopAudio };
+};
+
+/**
+ * useAudioRef hook
+ * @param audioRef
+ */
+export const useAudioRef = (audioRef: any) => {
+  const [audio] = useState(audioRef);
+  const [playingRef, setPlayingRef] = useState(false);
+
+  const stopAudio = useCallback(() => (audio.current.currentTime = 0), [audio]);
+
+  useEffect(() => {
+    if (audio) {
+      playingRef ? audio.current.play() : audio.current.pause();
+    }
+  }, [playingRef, audio]);
+
+  useEffect(() => {
+    audio.current.addEventListener("ended", () => setPlayingRef(false));
+    return () => {
+      audio.current.removeEventListener("ended", () => setPlayingRef(false));
+    };
+  }, [audio]);
+
+  return [playingRef, setPlayingRef, stopAudio] as const;
 };

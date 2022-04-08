@@ -33,15 +33,6 @@ const StyledHeaderRightContent = styled.div`
   display: flex;
   justify-content: space-between;
   margin-right: 5px;
-
-  img {
-    cursor: pointer;
-    height: 25px;
-
-    &[alt="stop"] {
-      margin-right: ${GUTTER.small};
-    }
-  }
 `;
 
 const StyledHeaderText = styled.span`
@@ -57,7 +48,24 @@ const StyledPlayer = styled.div`
   margin-bottom: -7px;
   background: ${SANGRIA};
   padding: 0 ${GUTTER.small};
+  
+  input, audio {
+    display: none;
+  }
+  
+  label {
+    display: flex;
+  }
+
+  img {
+    cursor: pointer;
+    height: 25px;
+  }
 `;
+
+const StyledStopButton = styled.img`
+  margin-right: ${GUTTER.small};
+`
 
 export {
   StyledHeader,
@@ -66,4 +74,5 @@ export {
   StyledHeaderRightContent,
   StyledHeaderText,
   StyledPlayer,
+  StyledStopButton
 };
