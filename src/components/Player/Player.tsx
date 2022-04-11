@@ -4,9 +4,8 @@ import {
   StyledStopButton,
 } from "../../blocks/Header/HeaderStyle";
 import { audioFile, PauseIcon, PlayIcon, StopIcon } from "../../assets";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useCounter } from "../../hooks";
-import { useAudioRef } from "../../hooks/useAudio";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { useCounter, useAudioRef } from "../../hooks";
 
 const Player = () => {
   const audioRef = useRef(null);
@@ -15,15 +14,12 @@ const Player = () => {
   const [icon, setIcon] = useState(PlayIcon);
 
   useEffect(() => {
-    setIcon(playingRef ? PauseIcon : PlayIcon);
-  }, [setIcon, playingRef]);
-
-  useEffect(() => {
     if (warTime) {
-      setPlayingRef(false);
       setIcon(PlayIcon);
+    } else {
+      setIcon(playingRef ? PauseIcon : PlayIcon);
     }
-  }, [setIcon, setPlayingRef, warTime]);
+  }, [setIcon, playingRef, warTime]);
 
   const handleAudioPlay = useCallback(
     (event) => {
@@ -42,33 +38,23 @@ const Player = () => {
     stopAudio();
   }, [stopAudio, setIcon, setPlayingRef]);
 
-  return (
+  return !warTime ? (
     <StyledPlayer>
-      {!warTime && (
-        <>
-          <audio
-            controls
-            title="osmanli"
-            preload="metadata"
-            ref={audioRef}
-            src={audioFile}
-          />
-          <input type="checkbox" id="play-check" onChange={handleAudioPlay} />
-          <label htmlFor="play-check">
-            <img src={icon} alt="stop" />
-          </label>
-          <StyledStopButton
-            src={StopIcon}
-            alt="stop"
-            onClick={handleAudioStop}
-          />
-        </>
-      )}
-      <StyledHeaderText>
-        {!warTime ? "Ottoman Music" : "Wartime!"}
-      </StyledHeaderText>
+      <audio
+        controls
+        title="osmanli"
+        preload="metadata"
+        ref={audioRef}
+        src={audioFile}
+      />
+      <input type="checkbox" id="play-check" onChange={handleAudioPlay} />
+      <label htmlFor="play-check">
+        <img src={icon} alt="stop" />
+      </label>
+      <StyledStopButton src={StopIcon} alt="stop" onClick={handleAudioStop} />
+      <StyledHeaderText>Ottoman Music</StyledHeaderText>
     </StyledPlayer>
-  );
+  ) : null;
 };
 
 export default Player;

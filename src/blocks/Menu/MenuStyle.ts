@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import {BLUE, GUTTER} from "../../constants";
+import { GUTTER, SANGRIA_LIGHT } from "../../constants";
 
 const contentAnimation = keyframes`
  0% { 
@@ -44,7 +44,7 @@ const StyledInnerMenu = styled.ul`
     text-decoration: none;
 
     &:hover {
-      color: ${BLUE};
+      color: ${SANGRIA_LIGHT};
     }
 
     &:nth-of-type(2) {
@@ -67,12 +67,12 @@ const StyledCloseButton = styled.button`
   background: transparent;
   border: 0;
   cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     opacity: 1;
   }
-  
+
   &:before,
   &:after {
     position: absolute;

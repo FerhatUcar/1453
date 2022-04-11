@@ -1,4 +1,9 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 
 export const useAudio = (url: string) => {
   const audio = useMemo(() => new Audio(url), [url]);
@@ -28,18 +33,20 @@ export const useAudioRef = (audioRef: any) => {
   const [audio] = useState(audioRef);
   const [playingRef, setPlayingRef] = useState(false);
 
-  const stopAudio = useCallback(() => (audio.current.currentTime = 0), [audio]);
+  const stopAudio = useCallback(() => {
+    if (audio) audio.current.currentTime = 0;
+  }, [audio]);
 
   useEffect(() => {
-    if (audio) {
-      playingRef ? audio.current.play() : audio.current.pause();
-    }
+    if (audio) playingRef ? audio.current.play() : audio.current.pause();
   }, [playingRef, audio]);
 
   useEffect(() => {
-    audio.current.addEventListener("ended", () => setPlayingRef(false));
+    audio &&
+      audio.current.addEventListener("ended", () => setPlayingRef(false));
     return () => {
-      audio.current.removeEventListener("ended", () => setPlayingRef(false));
+      audio &&
+        audio.current.removeEventListener("ended", () => setPlayingRef(false));
     };
   }, [audio]);
 

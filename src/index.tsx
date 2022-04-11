@@ -5,6 +5,7 @@ import App from "./App";
 import { Routes, Route, HashRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Sultans from "./pages/Sultans";
+import Contact from "./pages/Contact";
 
 ReactDOM.render(
   <StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="sultans" element={<Sultans />} />
+          <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
     </HashRouter>

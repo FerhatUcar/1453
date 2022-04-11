@@ -1,15 +1,7 @@
 import React, { FC, useEffect, useState } from "react";
 import styled from "styled-components";
 import { formatValue } from "../../utils/timeFormatter";
-import { useCounter } from "../../hooks/useCounter";
-
-// type CountObject = {
-//   count: {
-//     hours: number;
-//     minutes: number;
-//     seconds: number;
-//   };
-// };
+import { useCounter } from "../../hooks";
 
 const StyledText = styled.div`
   font-size: 60px;

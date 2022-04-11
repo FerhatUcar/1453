@@ -1,4 +1,4 @@
-import { useAudio } from "./useAudio";
+import { useAudio, useAudioRef } from "./useAudio";
 import { useCounter } from "./useCounter";
 
-export { useCounter, useAudio };
+export { useCounter, useAudio, useAudioRef };

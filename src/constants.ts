@@ -9,8 +9,8 @@ export const GUTTER = {
 export const SHADOW = "0 5px 10px rgba(0, 0, 0, 0.5)";
 
 // colors
-export const BLUE = "#00a2ff";
-export const SANGRIA = "#6c0031";
+export const SANGRIA_LIGHT = "#d90059";
+export const SANGRIA = "#560424";
 
 // date
 export const START_DATE = "March 28, 2022, 14:53:00";

@@ -27,11 +27,11 @@ const GlobalStyle = createGlobalStyle<{
   }
 `;
 
-const StyledContainer = styled.div<{ is1453: boolean }>`
+const StyledContainer = styled.div`
   height: 100%;
   width: 95%;
   margin: 0 auto;
-  display: ${({ is1453 }) => (is1453 ? "none" : "block")};
+  display: block};
 `;
 
 export const GenericStyleBox = css`
@@ -54,6 +54,13 @@ const StyledCounterBox = styled.div`
   font-size: 24px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.75);
   border: solid 1px #5b5b5b;
+`;
+
+const StyledWartimeText = styled.span`
+  font-size: 60px;
+  color: white;
+  font-weight: 400;
+  text-align: center;
 `;
 
 const StyledBox = styled.div<{ active?: ActiveType; currentBox?: number }>`
@@ -117,4 +124,5 @@ export {
   StyledCounterBox,
   StyledBox,
   StyledContent,
+  StyledWartimeText
 };
