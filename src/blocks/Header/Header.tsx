@@ -26,7 +26,7 @@ const Header: FC<HeaderProps> = ({ openMenu }) => {
           <StyledHamburger onClick={openMenu}>
             <img src={MenuIcon} alt="menu" />
           </StyledHamburger>
-          <StyledHeaderTitle>1453.info</StyledHeaderTitle>
+          <StyledHeaderTitle>1453</StyledHeaderTitle>
         </FlexItems>
         <StyledHeaderRightContent>
           <Player />

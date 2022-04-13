@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { GUTTER, SANGRIA, SHADOW} from "../../constants";
-import {size} from "../../utils/device";
+import { GUTTER, SANGRIA, SANGRIA_LIGHT, SHADOW } from "../../constants";
+import { size } from "../../utils/device";
 
 const StyledHeader = styled.div`
   color: white;
@@ -44,7 +44,7 @@ const StyledHeaderText = styled.span`
   display: none;
 
   @media (min-width: ${size.mobileL}) {
-   display: block;
+    display: block;
   }
 `;
 
@@ -54,13 +54,14 @@ const StyledPlayer = styled.div`
   margin-right: ${GUTTER.small};
   margin-top: -8px;
   margin-bottom: -8px;
-  background: ${SANGRIA};
+  background: linear-gradient(180deg, #73042f 50%, ${SANGRIA} 50%);
   padding: 0 ${GUTTER.small};
-  
-  input, audio {
+
+  input,
+  audio {
     display: none;
   }
-  
+
   label {
     display: flex;
   }
@@ -73,11 +74,11 @@ const StyledPlayer = styled.div`
 
 const StyledCurrentTime = styled.div`
   height: 25px;
-`
+`;
 
 const StyledHeaderTitle = styled.div`
   height: 25px;
-`
+`;
 
 const StyledStopButton = styled.img`
   margin-right: 0;
@@ -85,12 +86,12 @@ const StyledStopButton = styled.img`
   @media (min-width: ${size.mobileL}) {
     margin-right: ${GUTTER.small};
   }
-`
+`;
 
 const FlexItems = styled.div`
   display: flex;
   align-items: center;
-`
+`;
 
 export {
   StyledHeader,
@@ -102,5 +103,5 @@ export {
   StyledStopButton,
   StyledCurrentTime,
   StyledHeaderTitle,
-  FlexItems
+  FlexItems,
 };

@@ -32,8 +32,7 @@ const StyledTimeLine = styled.div`
   top: 0;
   bottom: 0;
   left: 50%;
-  height: 30px;
-  content: "";
+  height: 28px;
   z-index: 1;
   border-left: 5px dotted white;
 `;
