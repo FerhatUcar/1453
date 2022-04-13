@@ -41,7 +41,33 @@ const StyledTimeLine = styled.div`
 const StyledHat = styled.img`
   height: 100px;
   display: block;
-  margin: 0 auto;
+  position: absolute;
+  right: ${GUTTER.medium};
+  bottom: 5px;
 `;
 
-export { StyledDate, StyledHat, StyledSultansPage, StyledTimeLine };
+const StyledTitleBox = styled.div`
+  display: flex;
+  justify-content: space-between;
+  background: black;
+  color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.75);
+  border: solid 1px #424242;
+  padding: ${GUTTER.medium} ${GUTTER.medium} 0 ${GUTTER.medium};
+  height: 75px;
+  position: relative;
+  top: ${GUTTER.medium};
+  margin-bottom: ${GUTTER.large};
+  
+  h1 {
+    margin-top: 3px;
+  }
+`
+
+export {
+  StyledDate,
+  StyledHat,
+  StyledSultansPage,
+  StyledTimeLine,
+  StyledTitleBox,
+};

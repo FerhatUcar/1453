@@ -13,4 +13,4 @@ export const SANGRIA_LIGHT = "#d90059";
 export const SANGRIA = "#560424";
 
 // date
-export const START_DATE = "March 28, 2022, 14:53:00";
+export const START_DATE = "March 28, 2022, 22:24:00";

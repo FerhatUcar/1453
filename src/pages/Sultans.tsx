@@ -9,6 +9,7 @@ import {
   StyledHat,
   StyledDate,
   StyledTimeLine,
+  StyledTitleBox,
 } from "./styled/Sultans.style";
 
 const { sultans } = data;
@@ -68,9 +69,10 @@ const Sultans = () => {
   return (
     <>
       <StyledSultansPage>
-        <StyledHat src={Hat} alt="Hat" />
-
-        <h1>The greatest sultans</h1>
+        <StyledTitleBox>
+          <h1>The greatest sultans</h1>
+          <StyledHat src={Hat} alt="Hat" />
+        </StyledTitleBox>
 
         <StyledDate>1444</StyledDate>
         <StyledTimeLine />

@@ -1,9 +1,4 @@
-import {
-  useCallback,
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const useAudio = (url: string) => {
   const audio = useMemo(() => new Audio(url), [url]);
@@ -42,12 +37,10 @@ export const useAudioRef = (audioRef: any) => {
   }, [playingRef, audio]);
 
   useEffect(() => {
-    audio &&
-      audio.current.addEventListener("ended", () => setPlayingRef(false));
-    return () => {
-      audio &&
-        audio.current.removeEventListener("ended", () => setPlayingRef(false));
-    };
+    const audioEventEnded = audio.current.addEventListener("ended", () =>
+      setPlayingRef(false)
+    );
+    return () => audioEventEnded;
   }, [audio]);
 
   return [playingRef, setPlayingRef, stopAudio] as const;

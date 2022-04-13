@@ -1,10 +1,10 @@
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   StyledHeaderText,
   StyledPlayer,
   StyledStopButton,
 } from "../../blocks/Header/HeaderStyle";
 import { audioFile, PauseIcon, PlayIcon, StopIcon } from "../../assets";
-import { useCallback, useEffect, useRef, useState } from "react";
 import { useCounter, useAudioRef } from "../../hooks";
 
 const Player = () => {
@@ -16,20 +16,24 @@ const Player = () => {
   useEffect(() => {
     if (warTime) {
       setIcon(PlayIcon);
+      setPlayingRef(false);
+      stopAudio();
     } else {
       setIcon(playingRef ? PauseIcon : PlayIcon);
     }
-  }, [setIcon, playingRef, warTime]);
+  }, [setIcon, playingRef, warTime, stopAudio, setPlayingRef]);
 
   const handleAudioPlay = useCallback(
     (event) => {
+      if (warTime) event.preventDefault();
+
       const text = event.target.src;
       const hasPlayText = text.includes("play");
 
       setIcon(hasPlayText ? PauseIcon : PlayIcon);
       setPlayingRef(!playingRef);
     },
-    [setIcon, setPlayingRef, playingRef]
+    [setIcon, setPlayingRef, playingRef, warTime]
   );
 
   const handleAudioStop = useCallback(() => {
@@ -38,7 +42,7 @@ const Player = () => {
     stopAudio();
   }, [stopAudio, setIcon, setPlayingRef]);
 
-  return !warTime ? (
+  return (
     <StyledPlayer>
       <audio
         controls
@@ -52,9 +56,11 @@ const Player = () => {
         <img src={icon} alt="stop" />
       </label>
       <StyledStopButton src={StopIcon} alt="stop" onClick={handleAudioStop} />
-      <StyledHeaderText>Ottoman Music</StyledHeaderText>
+      <StyledHeaderText>
+        {warTime ? "Wartime" : "Ottoman Music"}
+      </StyledHeaderText>
     </StyledPlayer>
-  ) : null;
+  );
 };
 
 export default Player;

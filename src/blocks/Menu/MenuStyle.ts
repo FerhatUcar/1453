@@ -20,7 +20,7 @@ const StyledMenuSider = styled.div`
   width: 100%;
   height: 100vh;
   position: absolute;
-  z-index: 9;
+  z-index: 11;
 `;
 
 const StyledInnerMenu = styled.ul`

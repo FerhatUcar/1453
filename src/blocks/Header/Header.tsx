@@ -5,6 +5,9 @@ import {
   StyledInnerBox,
   StyledHamburger,
   StyledHeaderRightContent,
+  StyledCurrentTime,
+  StyledHeaderTitle,
+  FlexItems,
 } from "./HeaderStyle";
 import { MenuIcon } from "../../assets";
 import Player from "../../components/Player/Player";
@@ -19,12 +22,15 @@ const Header: FC<HeaderProps> = ({ openMenu }) => {
   return (
     <StyledHeader>
       <StyledInnerBox>
-        <StyledHamburger onClick={openMenu}>
-          <img src={MenuIcon} alt="menu" />
-        </StyledHamburger>
+        <FlexItems>
+          <StyledHamburger onClick={openMenu}>
+            <img src={MenuIcon} alt="menu" />
+          </StyledHamburger>
+          <StyledHeaderTitle>1453.info</StyledHeaderTitle>
+        </FlexItems>
         <StyledHeaderRightContent>
           <Player />
-          <div>{currentFormattedTime}</div>
+          <StyledCurrentTime>{currentFormattedTime}</StyledCurrentTime>
         </StyledHeaderRightContent>
       </StyledInnerBox>
     </StyledHeader>

@@ -31,7 +31,7 @@ const StyledContainer = styled.div`
   height: 100%;
   width: 95%;
   margin: 0 auto;
-  display: block};
+  display: block;
 `;
 
 export const GenericStyleBox = css`
@@ -46,7 +46,7 @@ const StyledCounterBox = styled.div`
   ${backgroundPositionSize("bottom", "cover")};
   background-image: url(${fetihDark});
   display: block;
-  padding: ${GUTTER.medium};
+  padding: ${GUTTER.medium} ${GUTTER.medium} ${GUTTER.small} ${GUTTER.medium};
   margin-top: ${GUTTER.medium};
   position: relative;
   color: white;
@@ -124,5 +124,5 @@ export {
   StyledCounterBox,
   StyledBox,
   StyledContent,
-  StyledWartimeText
+  StyledWartimeText,
 };

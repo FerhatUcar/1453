@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { GUTTER, SANGRIA, SHADOW} from "../../constants";
+import {size} from "../../utils/device";
 
 const StyledHeader = styled.div`
   color: white;
@@ -7,6 +8,8 @@ const StyledHeader = styled.div`
   font-size: 22px;
   font-weight: bolder;
   box-shadow: ${SHADOW};
+  position: relative;
+  z-index: 10;
 `;
 
 const StyledInnerBox = styled.div`
@@ -37,15 +40,20 @@ const StyledHeaderRightContent = styled.div`
 
 const StyledHeaderText = styled.span`
   letter-spacing: 1px;
-  font-size: 18px;
+  height: 25px;
+  display: none;
+
+  @media (min-width: ${size.mobileL}) {
+   display: block;
+  }
 `;
 
 const StyledPlayer = styled.div`
   display: flex;
   align-items: center;
   margin-right: ${GUTTER.small};
-  margin-top: -7px;
-  margin-bottom: -7px;
+  margin-top: -8px;
+  margin-bottom: -8px;
   background: ${SANGRIA};
   padding: 0 ${GUTTER.small};
   
@@ -63,8 +71,25 @@ const StyledPlayer = styled.div`
   }
 `;
 
+const StyledCurrentTime = styled.div`
+  height: 25px;
+`
+
+const StyledHeaderTitle = styled.div`
+  height: 25px;
+`
+
 const StyledStopButton = styled.img`
-  margin-right: ${GUTTER.small};
+  margin-right: 0;
+
+  @media (min-width: ${size.mobileL}) {
+    margin-right: ${GUTTER.small};
+  }
+`
+
+const FlexItems = styled.div`
+  display: flex;
+  align-items: center;
 `
 
 export {
@@ -74,5 +99,8 @@ export {
   StyledHeaderRightContent,
   StyledHeaderText,
   StyledPlayer,
-  StyledStopButton
+  StyledStopButton,
+  StyledCurrentTime,
+  StyledHeaderTitle,
+  FlexItems
 };

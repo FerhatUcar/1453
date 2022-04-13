@@ -49,7 +49,6 @@ const Contact = () => {
     <>
       <GlobalStyle is1453={warTime} />
       <StyledBody>
-        <h1>Contact</h1>
         <StyledGrid>
           <span>Creator</span>
           <span>Ferhat Ucar</span>

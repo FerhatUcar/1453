@@ -15,12 +15,11 @@ type ChangeEvent = ChangeEventHandler<HTMLInputElement>;
 const Home = () => {
   const { setPlaying } = useAudio(battleSound);
   const { count, warTime } = useCounter();
-  const checkboxText = "Play war sound at 1453 (Chrome)";
 
   const handleSoundOnChange: ChangeEvent = (event) => {
     const checked = event.target.checked;
 
-    setPlaying(checked && warTime);
+    setPlaying(checked);
   };
 
   useEffect(() => {
@@ -30,7 +29,9 @@ const Home = () => {
   return (
     <>
       <GlobalStyle is1453={warTime} />
-      <Checkbox onChange={handleSoundOnChange} text={checkboxText} />
+      {warTime && (
+        <Checkbox onChange={handleSoundOnChange} text="Play war sound" />
+      )}
       <StyledContainer>
         <StyledCounterBox>
           {!warTime && (
