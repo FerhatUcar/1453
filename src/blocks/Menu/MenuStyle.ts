@@ -3,7 +3,7 @@ import { GUTTER, SANGRIA_LIGHT } from "../../constants";
 
 const contentAnimation = keyframes`
  0% { 
-   transform: translateY(50px); 
+   transform: translateY(50px);
    opacity: 0;
    visibility: hidden;
  }
@@ -42,6 +42,7 @@ const StyledInnerMenu = styled.ul`
     transition: color .3s ease-in-out;
     color: white;
     text-decoration: none;
+    will-change: transform;
 
     &:hover {
       color: ${SANGRIA_LIGHT};

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GUTTER, SANGRIA, SANGRIA_LIGHT, SHADOW } from "../../constants";
+import { GUTTER, SANGRIA, SHADOW } from "../../constants";
 import { size } from "../../utils/device";
 
 const StyledHeader = styled.div`
